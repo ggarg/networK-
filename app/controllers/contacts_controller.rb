@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
 
-	def add
+	def new
 	end
 
 	def create
@@ -13,8 +13,9 @@ class ContactsController < ApplicationController
 	contact.date = params["date"]
 	contact.notes = params["notes"]
 	contact.save
-	# redirect_to "/index" notice: "Your contact has been added!"
-	#render text: params[:addcontact].inspect
+	redirect_to "/index", notice: "Your contact has been added!"
+else 
+	
 	end
 
 	def view
