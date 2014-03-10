@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NetworK</title>
+  
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <style type="text/css">
+
+    body{
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 01%;
+      margin-bottom: 5%;
+      padding: 1%
+  }
+
+   .col-lg-6{
+      text-align: center ! important;
+    }
+
+    .footer{
+      position: fixed ! important;
+      bottom: 0 ! important;
+      margin-left: auto ! important;
+      margin-right: auto ! important;
+    }
+
+    .title{
+      margin-left: 5x ! important;
+      margin-right: 5x ! important;
+      text-align: center !important;
+      color: purple !important;
+    }
+
+    .nav{
+      position: center;
+      left:5%;
+      margin-top:30px;
+      margin-left:0px;
+      background-color: #F1E8F1 !important;
+    }
+
+    .text{
+      margin-top: 5%;
+      margin-left: 3%;
+      margin-right: 2%;
+      text-align: justify
+
+    }
+
+    </style>
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+  <body>
+    <div class="navbar-wrapper">
+      <div class="masthead">
+        <h1 class=title> networK!</h1><br><br>
+
+        <ul class="nav nav-justified">
+          <li class="active"><a href="/index">Home
+          <form action="/index">
+          </a></li>
+
+          <li><a href="/contacts/new">Add Contact
+          <form action="/contacts/new">
+          </a></li>
+
+          <li><a href="/contacts/view">View Contact
+          <form action="/contacts/view">
+          </a></li>
+
+
+          <li><a href="/show">About
+          <form action="/show">
+          </a></li>
+
+          <li><a href="/contactus">Contact Us
+          <form action="/contactus">
+          </a></li>
+
+        </ul>
+        <br>
+      </div>
+    </div>
+
+<div class="container">
+    <% if notice.present? %>
+      <div class="alert alert-dismissable alert-success">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= notice %>
+      </div>
+    <% end %>
+
+<%= yield %>
+
+</body>
+</html>
