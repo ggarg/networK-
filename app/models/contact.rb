@@ -1,7 +1,9 @@
 class Contact < ActiveRecord::Base
 
-# validates :fname, :lname, :date, presence: { true, 
-# 	message:"Please enter the required fields"}
+validates :fname, :lname, :date, presence: true
+
+belongs_to :user
+
 
 end
 

@@ -1,19 +1,40 @@
+
+</head>
+<style>
+
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: #CCCCCC;
+}
+
+</style>
+<body>
 <div class="page-header">
-<h1 class="text">
-VIEW CONTACT
+<h2 class="header">
+View Contacts
 </h1>
+</div>
+<Br>
 
-<table>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-  </tr>
 
-  <% @contact_list.each do |contact| %>
+<table class="table table-hover">
+
+
+ <th>First Name</th>
+  <th>Last Name</th>
+  <th>Reminder Date </th>
+  <th>Action </th>
+
+<% @contact_list.each do |contact| %>
     <tr>
       <td><%= contact.fname %></td>
       <td><%= contact.lname %></td>
-    </tr>
+      <td><%= contact.date %></td>
+      <td><%= link_to "Edit", "/contacts/#{contact.id}/edit" %> | <%= link_to "Delete", "/contacts/#{contact.id}/delete" %></td>
+
   <% end %>
 </table>
+</body>
+
+
+
 

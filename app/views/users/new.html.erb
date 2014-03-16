@@ -1,0 +1,22 @@
+<div class="page-header">
+<h2 class = "header">
+  <h2>Sign Up</h2>
+</div>
+
+<form action="/users/create" class="col-md-4">
+
+  <div class="form-group">
+    <label class="control-label">Enter a User ID:</label>
+    <input name="fname" type="text" class="form-control input-md" placeholder="Please put in a User ID">
+  </div>
+
+  <div class="form-group">
+    <label>Enter a Password:</label>
+    <input name="password" type="text" class="form-control input-md" placeholder="Please enter a Password">
+  </div>
+
+<br>
+  <button type="submit" class="btn btn-success btn-md">Sign Me Up!</button>
+  or
+  <%= link_to "Cancel", "/" %>
+</form>

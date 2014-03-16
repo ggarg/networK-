@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307031113) do
+ActiveRecord::Schema.define(version: 20140313043132) do
 
   create_table "contacts", force: true do |t|
     t.string   "fname"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 20140307031113) do
     t.string   "company"
     t.string   "date"
     t.string   "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "first_name"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

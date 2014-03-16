@@ -1,0 +1,23 @@
+<div class="page-header">
+<h2 class = "header">
+  <h2>Sign In</h2>
+</div>
+
+<form action="/authenticate" class="col-md-4">
+<div class="form-group">
+  <label>User ID:</label>
+  <input name="fname" type="text" class="form-control" placeholder="Please put in your User ID">
+
+
+  <br>
+
+
+  <div class="form-group">
+  <label class="control-label">Password:</label>
+  <input name="password" type="password" class="form-control input-md" placeholder="Please put in your Password">
+
+  <br><br>
+    <button type="submit" class="btn btn-success btn-md">Sign In</button>
+  or
+  <%= link_to "Cancel", "/" %>
+</form>

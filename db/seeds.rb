@@ -1,3 +1,14 @@
+
+User.destroy_all
+["Jeff", "Brian"].each do |name|
+  u = User.new
+  u.first_name = name
+  u.password = "hockey"
+  u.save
+end
+
+puts "There are now #{User.count} users in the database."
+
 contact_list = [ { :fname => "Gayatri",
                    :lname => "Garg",
                    :email => "gayatrigarg@hotmail.com",

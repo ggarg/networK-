@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:og="http://ogp.me/ns#"
+xmlns:fb="https://www.facebook.com/2008/fbml">
+
 <head>
   <meta charset="utf-8">
-  <title>NetworK</title>
-  
+
+<title>NetworK</title>
+
+
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-  <style type="text/css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://bootsnipp.com/css/bootsnipp.css?ver=f63163cdb1493c95a036f8830d0132c5">
 
-    body{
-      margin-left: 5%;
-      margin-right: 5%;
-      margin-top: 01%;
-      margin-bottom: 5%;
-      padding: 1%
-  }
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
 
+<style type="text/css">
+
+
+body {
+  background-color: #6f5499;
+  color: white;
+
+}
    .col-lg-6{
       text-align: center ! important;
     }
@@ -30,24 +41,30 @@
       margin-left: 5x ! important;
       margin-right: 5x ! important;
       text-align: center !important;
-      color: purple !important;
+      color: white !important;
     }
 
-    .nav{
-      position: center;
-      left:5%;
-      margin-top:30px;
-      margin-left:0px;
-      background-color: #F1E8F1 !important;
     }
 
     .text{
-      margin-top: 5%;
-      margin-left: 3%;
-      margin-right: 2%;
-      text-align: justify
-
+      margin-top: 2%;
+      margin-left: 0%;
+      margin-right: 5%;
+      text-align: justify;
+      color: white;
+      font-weight: normal;
+      font-size: 24;
     }
+
+    .header {
+      margin-top: -5%;
+      color: white;
+    }
+
+    .pull-right {
+      padding: 1100x,
+    }
+</style>
 
     </style>
 
@@ -56,35 +73,90 @@
   <%= csrf_meta_tags %>
 
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34731274-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
+  <script type="text/javascript">
+  var fb_param = {};
+  fb_param.pixel_id = '6007046190250';
+  fb_param.value = '0.00';
+  (function(){
+  var fpw = document.createElement('script');
+  fpw.async = true;
+  fpw.src = '//connect.facebook.net/en_US/fp.js';
+  var ref = document.getElementsByTagName('script')[0];
+  ref.parentNode.insertBefore(fpw, ref);
+  })();
+  </script>
+  <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6007046190250&amp;value=0" /></noscript>
+  </head>
 
-</head>
+
+
+<div id="wrap">
+<nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0;">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-bootsnipp-collapse">
+
+
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div class="animbrand"><a class="navbar-brand" href="http://localhost:3000">networK!</a></div>
+</div>
+
+
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse navbar-bootsnipp-collapse" role="navigation">
+<ul class="nav navbar-nav">
+<li><a href=" http://localhost:3000"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+<% if current_user %>
+<li><a href="/contacts/new"> <span class="glyphicon glyphicon-plus"></span> Add Contact </b></a><% end %>
+<% if current_user %>
+<li><a href="/contacts/view"><span class="glyphicon glyphicon-book"></span> View Contacts </b></a><% end %>
+<li><a href="/show"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+<li><a href="/contactus"><span class="glyphicon glyphicon-info-sign"></span> Contact Us</a></li>
+</ul>
+
+
+<ul class="nav navbar-nav navbar-right">
+        <% user = User.find_by(:id => session[:user_id]) %>
+          <% if user.present? %>
+        <p class="navbar-text">Hi, <%= user.first_name %>!</p>
+        <% end %>
+        <% if user.present? %>
+          <li><a href="/users/<%= user.id %>/show">My Profile</a></li>
+          <li><a href="/logout">Sign Out</a></li>
+        <% else %>
+          <li><a href="/users/new">Sign Up</a></li>
+          <li><a href="/login">Sign In</a></li>
+        <% end %>
+      </ul>
+
+
+</div><!-- /.navbar-collapse -->
+</div>
+</nav>
+
+
+
+<br>
+    <h1 class=title> networK!</h1><br><br>
+
+
 <body>
-
-  <body>
-    <div class="navbar-wrapper">
-      <div class="masthead">
-        <h1 class=title> networK!</h1><br><br>
-
-        <ul class="nav nav-justified">
-          <li class="active"><a href="/index">Home
-          </a></li>
-
-          <li><a href="/contacts/new">Add Contact
-          </a></li>
-
-          <li><a href="/contacts/view">View Contact
-          </a></li>
-
-          <li><a href="/show">About
-          </a></li>
-
-          <li><a href="/contactus">Contact Us
-          </a></li>
-
-        </ul>
-        <br>
-      </div>
-    </div>
 
 <div class="container">
     <% if notice.present? %>
